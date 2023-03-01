@@ -1,7 +1,7 @@
 HEADER = 64
 FORMAT = 'utf-8'
 ## Edit Server below to the hostname of the machine running the server
-SERVER = "dhcp-10-250-116-175.harvard.edu" 
+SERVER = "dhcp-10-250-157-86.harvard.edu" 
 PORT = 5050
 ADDR = (SERVER, PORT)
 
@@ -11,6 +11,9 @@ RECIPIENT = "!RECIPIENT:"
 SENDER = "!SENDER:"
 LENGTH = "!LENGTH:"
 BODY = "!BODY:"
+
+# Alerts
+NO_MESSAGE = 100
 
 # General
 SEPARATOR = "/"
