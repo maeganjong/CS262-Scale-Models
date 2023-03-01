@@ -4,6 +4,7 @@ import random
 import socket
 from commands import *
 import time
+
 # take from args of which process it is - to know its address?
 
 class Model():
@@ -12,23 +13,74 @@ class Model():
         self.clock_speed = random.randint(1,6)
         self.clock = 0
 
-        self.addr_self = ADDR+process
-        self.addr_one = ADDR+(process+1)%3
-        self.addr_two = ADDR+(process+2)%3
+        try:
+            self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            self.client.connect(ADDR)
+        except:
+            logging.debug('Failed to connect to server')
+        
+        print("Connected to server. Starting simulation.")
 
-        # ASSIGN ADDR1 for actual process 1
-
-        self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.server.bind(self.addr_self)
-
-        ## Have this be behind a user input before running
-        # Connect to the other two machines
-        self.client1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.client1.connect(self.addr_one)
-
-        self.client2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.client2.connect(self.addr_two)
     
+    '''Creates the message string per the designed wire protocol.'''
+    def create_message(self, purpose, body, recipient=None, sender=None):
+        data=PURPOSE + SEPARATOR + purpose
+        if recipient and sender:
+            data += SEPARATOR + RECIPIENT + SEPARATOR + recipient
+            data += SEPARATOR + SENDER + SEPARATOR + sender
+        if body:
+            length = len(body)
+            data += SEPARATOR + LENGTH + SEPARATOR + str(length)
+            data += SEPARATOR + BODY + SEPARATOR + body
+        
+        return data
+
+    '''Sends the message to the server per the designed wire protocol.'''
+    def send(self, purpose, body, recipient=None, sender=None):
+        msg = self.create_message(purpose, body, recipient, sender)
+        try:
+            encoded_message = msg.encode(FORMAT)
+            if len(encoded_message) > MAX_BANDWIDTH:
+                return False
+            
+            encoded_message = encoded_message.ljust(MAX_BANDWIDTH, b'0')
+            self.client.send(encoded_message)
+        except:
+            raise ValueError
+        
+        return True
+
+    
+    def parse_message(self, full_message):
+        split_message = full_message.split("/")
+        parsed_message = {}
+        i = 0
+        while i < len(split_message):
+            part = split_message[i]
+            if BODY != part:
+                parsed_message[part] = split_message[i+1]
+                i += 1
+            else:
+                body = "/".join(split_message[i+1:])
+                length = int(parsed_message[LENGTH])
+                parsed_message[part] = body[:length]
+                break
+            i += 1
+        
+        return parsed_message
+    
+
+    def receive(self):
+        try:
+            full_message = self.client.recv(MAX_BANDWIDTH).decode(FORMAT)
+            parsed_message = self.parse_message(full_message)
+
+            return parsed_message
+        
+        except:
+            return self.receive()
+
+
     def run(self):
         while True:
             action = random.randint(1,6)
@@ -46,7 +98,8 @@ class Model():
                 self.client2.send()
 
             else: 
-
+                pass
+                
             self.server.receive()
             self.clock += 1
             time.sleep(60/self.clock_speed)
@@ -67,6 +120,6 @@ def main():
     ## Use: logging.debug('This message should go to the log file')
     
     model = Model(process)
-    model.run()
+    # model.run()
 
 main()
