@@ -60,12 +60,13 @@ class Model:
                 else:
                     logging.info(f'Internal event at {self.clock} logical time & at {datetime.now().time()}')
                 
-                time.sleep(60/self.clock_speed)
+                
             # If there's a message in the queue
             else:
                 self.clock = max(self.clock, message.logical_clock_time) + 1
                 logging.info(f'Receive messsage from {message.sender} at {self.clock} logical time & at {datetime.now().time()}. Message queue length: {message.length_queue}')
 
+            time.sleep(60/self.clock_speed)
 def main():
     # Determines which process we're working with - provides identifier for logging & communication
     parser = argparse.ArgumentParser(
