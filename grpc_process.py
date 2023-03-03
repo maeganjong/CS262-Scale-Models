@@ -44,7 +44,7 @@ class Model:
                     output = self.connection.client_send_message(chat.Note(sender=self.process, recipient=self.client1, logical_clock_time=self.clock, length_queue=None))
                     print(output.text)
                     logging.info(f'Sent message to {self.client1} at {self.clock} logical time & at {datetime.now().time()}')
-                # Send to client 2 & 3
+                # Send to client 2 
                 elif action == 2:
                     output = self.connection.client_send_message(chat.Note(sender=self.process, recipient=self.client2, logical_clock_time=self.clock, length_queue=None))
                     print(output.text)
