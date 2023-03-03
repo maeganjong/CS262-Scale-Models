@@ -37,7 +37,7 @@ class Model:
             # If there's no message in the queue
             if message.sender == NO_MESSAGE:
                 self.clock += 1
-                action = random.randint(1,6)
+                action = random.randint(1,10)
 
                 # Send to client 1
                 if action == 1:
