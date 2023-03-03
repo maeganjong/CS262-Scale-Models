@@ -12,11 +12,16 @@ class Model:
     def __init__(self, process, max_clock_speed = 6, max_internal_clock = 10, test=False):
         self.process = process
         self.max_internal_clock = max_internal_clock
-        self.clock_speed = random.randint(1, max_clock_speed)
+
+        # Sets up the clock speed for the process
+        self.clock_speed = random.randint(1,max_clock_speed)
         print("Clockspeed ", self.clock_speed)
         logging.info(f"Clockspeed: {self.clock_speed}")
 
+        # Sets up the logical clock
         self.clock = 0
+
+        # Sets up the universal process ID to the local process' reference
         self.client1 = (process + 1) % 3
         self.client2 = (process + 2) % 3
 
@@ -24,6 +29,7 @@ class Model:
             #  Does not connect to server if test
             return
         
+        # Connects to server
         self.connection = None
         try:
             self.connection = model_pb2_grpc.ChatStub(grpc.insecure_channel(f"{SERVER}:{PORT}"))
