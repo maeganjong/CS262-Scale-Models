@@ -1,0 +1,11 @@
+INFO:root:Clockspeed: 2
+INFO:root:Sent message to 2 at 1 logical time & at 11:19:34.393645
+INFO:root:Receive messsage from 1 at 3 logical time & at 11:20:04.398063. Message queue length: 1
+INFO:root:Receive messsage from 2 at 4 logical time & at 11:20:34.404149. Message queue length: 1
+INFO:root:Receive messsage from 2 at 5 logical time & at 11:21:04.415399. Message queue length: 1
+INFO:root:Receive messsage from 1 at 8 logical time & at 11:21:34.421277. Message queue length: 1
+INFO:root:Receive messsage from 2 at 9 logical time & at 11:22:04.432333. Message queue length: 4
+INFO:root:Receive messsage from 1 at 12 logical time & at 11:22:34.442812. Message queue length: 4
+INFO:root:Receive messsage from 2 at 13 logical time & at 11:23:04.455524. Message queue length: 4
+INFO:root:Receive messsage from 1 at 14 logical time & at 11:23:34.465752. Message queue length: 3
+INFO:root:Receive messsage from 1 at 15 logical time & at 11:24:04.475013. Message queue length: 3
