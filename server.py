@@ -71,6 +71,7 @@ class ChatServicer(model_pb2_grpc.ChatServicer):
         
         return chat.Text(text="Message sent!")
 
+
 """Class for running server backend functionality."""
 class ServerRunner:
     """Initialize a server instance."""
