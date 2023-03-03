@@ -23,6 +23,10 @@ The three commands that should be used for each of your terminal session are:
 - `python3 run_process.py --p 2`
 <!-- 3. [Optional] Customize the range of clockspeeds the processes can be assigned to by passing an additional commandline argument  -->
 
+## Running Tests
+1. To run server tests, run `pytest server_tests.py`
+2. To run process tests, run `pytest process_tests.py`
+
 ## Understanding the Simulation
 
 ### Accessing the Files
