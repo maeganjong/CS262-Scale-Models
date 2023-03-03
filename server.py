@@ -1,10 +1,7 @@
-import socket 
 import threading
-import re
 from commands import *
 
 import grpc
-from grpc._server import _Server
 import model_pb2 as chat
 import model_pb2_grpc
 
@@ -95,7 +92,3 @@ class ServerRunner:
     def stop(self):
         self.server.stop(grace=None)
         self.thread_pool.shutdown(wait=False)
-
-chat_server = ServerRunner()
-print("[STARTING] server is starting...")
-chat_server.start()
