@@ -1,9 +1,9 @@
 HEADER = 64
 FORMAT = 'utf-8'
 ## Edit Server below to the hostname of the machine running the server
-SERVER = "dhcp-10-250-157-86.harvard.edu" 
-PORT = 5050
-ADDR = (SERVER, PORT)
+SERVER = "127.0.0.1"
+# PORT = 5050
+# ADDR = (SERVER, PORT)
 
 # Data Types
 PURPOSE = "!PURPOSE:"

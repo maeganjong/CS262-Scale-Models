@@ -1,18 +1,2 @@
-INFO:root:Clockspeed: 3
-INFO:root:Internal event at 1 logical time & at 22:44:44.636262
-INFO:root:Internal event at 2 logical time & at 22:45:04.648731
-INFO:root:Receive messsage from 0 at 4 logical time & at 22:45:24.656887. Message queue length: 0
-INFO:root:Internal event at 5 logical time & at 22:45:44.667444
-INFO:root:Internal event at 6 logical time & at 22:46:04.675149
-INFO:root:Sent message to 0 at 7 logical time & at 22:46:24.688959
-INFO:root:Receive messsage from 0 at 12 logical time & at 22:46:44.702110. Message queue length: 0
-INFO:root:Internal event at 13 logical time & at 22:47:04.710866
-INFO:root:Receive messsage from 0 at 15 logical time & at 22:47:24.722334. Message queue length: 0
-INFO:root:Sent message to 2 at 16 logical time & at 22:47:44.730623
-INFO:root:Internal event at 17 logical time & at 22:48:04.737489
-INFO:root:Receive messsage from 0 at 19 logical time & at 22:48:24.742900. Message queue length: 0
-INFO:root:Receive messsage from 2 at 20 logical time & at 22:48:44.745885. Message queue length: 0
-INFO:root:Receive messsage from 0 at 23 logical time & at 22:49:04.756109. Message queue length: 0
-INFO:root:Sent message to 2 at 24 logical time & at 22:49:24.763603
-INFO:root:Sent message to 0 at 25 logical time & at 22:49:44.775515
-INFO:root:Sent message to 2 at 26 logical time & at 22:50:04.785241
+INFO:root:Clockspeed: 1
+INFO:root:Receive messsage from 0 at 2 logical time & at 00:38:17.747273. Message queue length: 0

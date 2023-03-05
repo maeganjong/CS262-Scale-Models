@@ -20,7 +20,7 @@ class ChatServicer(model_pb2_grpc.ChatServicer):
         self.message_queue_2 = [] 
 
     '''Handles the clients receiving messages sent to them. Delivers the message to the clients then clears sent messages'''
-    def client_receive_message(self, request, context):
+    def client_receive_message1(self, request, context):
         recipient = int(request.text)
         if recipient == 0:
             mutex_queue0.acquire()
@@ -54,7 +54,7 @@ class ChatServicer(model_pb2_grpc.ChatServicer):
                 return message
 
     '''Handles the clients sending messages to other clients'''
-    def client_send_message(self, request, context):
+    def client_send_message1(self, request, context):
         recipient = request.recipient
         if recipient == 0:
             mutex_queue0.acquire()
@@ -75,19 +75,22 @@ class ChatServicer(model_pb2_grpc.ChatServicer):
 """Class for running server backend functionality."""
 class ServerRunner:
     """Initialize a server instance."""
-    def __init__(self, ip = "localhost"):
+    def __init__(self, config, ip = "localhost"):
         self.ip = SERVER
-        self.port = PORT
+        self.port = config["port"]
 
         self.server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
         self.chat_servicer = ChatServicer()
 
     """Function for starting server."""
     def start(self):
+        print("HERE??")
         model_pb2_grpc.add_ChatServicer_to_server(self.chat_servicer, self.server)
         self.server.add_insecure_port(f"[::]:{self.port}")
         self.server.start()
+        print("I AM HERE")
         self.server.wait_for_termination()
+        print("hm")
 
     """Function for stopping server."""
     def stop(self):
