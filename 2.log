@@ -1,2 +1,2 @@
-INFO:root:Clockspeed: 6
-INFO:root:Receive messsage from 0 at 2 logical time & at 00:38:17.759726. Message queue length: 0
+INFO:root:Clockspeed: 3
+INFO:root:Sent message to 2056 and 3056 at 1 logical time & at 23:58:47.351226

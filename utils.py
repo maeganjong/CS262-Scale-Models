@@ -1,11 +1,8 @@
 import threading
 from commands import *
 
-import grpc
 import model_pb2 as chat
 import model_pb2_grpc
-
-from concurrent import futures
 
 mutex_queue = threading.Lock()
 

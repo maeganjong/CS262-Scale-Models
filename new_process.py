@@ -59,7 +59,6 @@ class Model:
             random.seed(seed)
         
         while True:
-            print("here!!")
             # Check if there's a message in the queue
             message = self.connection.client_receive_message(chat.Text(text=str(self.process)))
             
@@ -95,10 +94,9 @@ class Model:
                 self.clock = max(self.clock, message.logical_clock_time) + 1
                 logging.info(f'Receive messsage from {message.sender} at {self.clock} logical time & at {datetime.now().time()}. Message queue length: {message.length_queue}')
             
-            print('here??')
             if test:
                 # Only run the loop once if it's a test
                 return
             
-            # time.sleep(60/self.clock_speed)
+            time.sleep(60/self.clock_speed)
 

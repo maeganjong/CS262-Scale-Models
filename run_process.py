@@ -43,18 +43,7 @@ def run_server(config):
 
 
 if __name__ == '__main__':
-    # Determines which process we're working with - provides identifier for logging & communication
-    # parser = argparse.ArgumentParser(
-    #                 description = 'Specify the process number it should take')
-    # parser.add_argument('--p', type=int)
-    # args = parser.parse_args()
-
-    # # int 0, 1, 2
-    # process = args.p
-
-    # Establishes logging functionality
-    # logging.basicConfig(filename=f'{process}.log', encoding='utf-8', level=logging.DEBUG, filemode="w")
-
+    # Set up process configs
     ports = [2056, 3056, 4056]
 
     config1 = {"process_id": 0, "port": ports[0], "recipient1": ports[1], "recipient2": ports[2]}
@@ -66,6 +55,7 @@ if __name__ == '__main__':
     config3= {"process_id": 2, "port": ports[2], "recipient1": ports[0], "recipient2": ports[1]}
     p3 = Process(target=run_server, args=(config3,))
 
+    # Starts the processes
     p1.start()
     print("[STARTING] server 1 is starting...")
 
