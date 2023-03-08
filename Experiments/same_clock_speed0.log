@@ -1,0 +1,68 @@
+INFO:root:Clockspeed: 10
+INFO:root:Sent message to 2 at 1 logical time & at 12:16:33.069403
+INFO:root:Internal event at 2 logical time & at 12:16:39.075921
+INFO:root:Sent message to 2 at 3 logical time & at 12:16:45.080018
+INFO:root:Internal event at 4 logical time & at 12:16:51.083185
+INFO:root:Sent message to 1 at 5 logical time & at 12:16:57.087092
+INFO:root:Internal event at 6 logical time & at 12:17:03.093625
+INFO:root:Sent message to 1 at 7 logical time & at 12:17:09.099119
+INFO:root:Receive messsage from 2 at 10 logical time & at 12:17:15.102411. Message queue length: 0
+INFO:root:Sent message to 1 and 2 at 11 logical time & at 12:17:21.107058
+INFO:root:Sent message to 2 at 12 logical time & at 12:17:27.115643
+INFO:root:Internal event at 13 logical time & at 12:17:33.118841
+INFO:root:Internal event at 14 logical time & at 12:17:39.125628
+INFO:root:Internal event at 15 logical time & at 12:17:45.131622
+INFO:root:Internal event at 16 logical time & at 12:17:51.135506
+INFO:root:Receive messsage from 1 at 18 logical time & at 12:17:57.140853. Message queue length: 0
+INFO:root:Internal event at 19 logical time & at 12:18:03.146276
+INFO:root:Internal event at 20 logical time & at 12:18:09.150006
+INFO:root:Internal event at 21 logical time & at 12:18:15.156465
+INFO:root:Internal event at 22 logical time & at 12:18:21.162625
+INFO:root:Internal event at 23 logical time & at 12:18:27.166700
+INFO:root:Receive messsage from 1 at 24 logical time & at 12:18:33.173712. Message queue length: 0
+INFO:root:Internal event at 25 logical time & at 12:18:39.189191
+INFO:root:Receive messsage from 1 at 26 logical time & at 12:18:45.195790. Message queue length: 0
+INFO:root:Internal event at 27 logical time & at 12:18:51.203006
+INFO:root:Receive messsage from 2 at 29 logical time & at 12:18:57.206325. Message queue length: 0
+INFO:root:Sent message to 2 at 30 logical time & at 12:19:03.213680
+INFO:root:Internal event at 31 logical time & at 12:19:09.220666
+INFO:root:Receive messsage from 2 at 33 logical time & at 12:19:15.225386. Message queue length: 0
+INFO:root:Sent message to 1 at 34 logical time & at 12:19:21.214238
+INFO:root:Internal event at 35 logical time & at 12:19:27.207854
+INFO:root:Receive messsage from 2 at 36 logical time & at 12:19:33.206834. Message queue length: 0
+INFO:root:Receive messsage from 2 at 37 logical time & at 12:19:39.203889. Message queue length: 0
+INFO:root:Sent message to 2 at 38 logical time & at 12:19:45.204514
+INFO:root:Internal event at 39 logical time & at 12:19:51.205786
+INFO:root:Internal event at 40 logical time & at 12:19:57.207193
+INFO:root:Internal event at 41 logical time & at 12:20:03.211370
+INFO:root:Internal event at 42 logical time & at 12:20:09.213371
+INFO:root:Receive messsage from 1 at 44 logical time & at 12:20:15.216293. Message queue length: 0
+INFO:root:Receive messsage from 1 at 45 logical time & at 12:20:21.217408. Message queue length: 0
+INFO:root:Internal event at 46 logical time & at 12:20:27.222012
+INFO:root:Internal event at 47 logical time & at 12:20:33.225783
+INFO:root:Sent message to 2 at 48 logical time & at 12:20:39.231707
+INFO:root:Sent message to 1 and 2 at 49 logical time & at 12:20:45.240595
+INFO:root:Internal event at 50 logical time & at 12:20:51.248103
+INFO:root:Internal event at 51 logical time & at 12:20:57.254598
+INFO:root:Internal event at 52 logical time & at 12:21:03.257922
+INFO:root:Sent message to 2 at 53 logical time & at 12:21:09.264308
+INFO:root:Receive messsage from 1 at 55 logical time & at 12:21:15.268819. Message queue length: 0
+INFO:root:Internal event at 56 logical time & at 12:21:21.272954
+INFO:root:Internal event at 57 logical time & at 12:21:27.274810
+INFO:root:Internal event at 58 logical time & at 12:21:33.280365
+INFO:root:Internal event at 59 logical time & at 12:21:39.286644
+INFO:root:Receive messsage from 2 at 61 logical time & at 12:21:45.291999. Message queue length: 0
+INFO:root:Internal event at 62 logical time & at 12:21:51.296784
+INFO:root:Receive messsage from 2 at 63 logical time & at 12:21:57.302138. Message queue length: 0
+INFO:root:Internal event at 64 logical time & at 12:22:03.307689
+INFO:root:Sent message to 1 at 65 logical time & at 12:22:09.314045
+INFO:root:Sent message to 1 at 66 logical time & at 12:22:15.319754
+INFO:root:Sent message to 2 at 67 logical time & at 12:22:21.323986
+INFO:root:Internal event at 68 logical time & at 12:22:27.329752
+INFO:root:Sent message to 1 and 2 at 69 logical time & at 12:22:33.337555
+INFO:root:Sent message to 1 and 2 at 70 logical time & at 12:22:39.376884
+INFO:root:Internal event at 71 logical time & at 12:22:45.380731
+INFO:root:Receive messsage from 2 at 73 logical time & at 12:22:51.383930. Message queue length: 0
+INFO:root:Receive messsage from 2 at 74 logical time & at 12:22:57.391986. Message queue length: 0
+INFO:root:Internal event at 75 logical time & at 12:23:03.394703
+INFO:root:Internal event at 76 logical time & at 12:23:09.400329
