@@ -12,9 +12,11 @@ def test_initialization():
     assert model.process == 0
     assert model.clock == 0
 
+    # Ensures a valid clock speed and internal clock
     assert model.clock_speed > 0 and model.clock_speed <= 6
     assert model.max_internal_clock > 0 and model.max_internal_clock <= 10
 
+    # Asserts the recipient ids are correctly set
     assert model.client1 == 1
     assert model.client2 == 2
 
@@ -29,6 +31,7 @@ def test_receive_no_message_send_client1():
     # Seed 2 causes the action to be 1 (send to client 1)
     model.run(test=True, seed=2)
 
+    # Checks that a message was sent to client 1 with the correct logical clock time
     assert model.clock == 1
     assert model.connection.client_receive_message.call_count == 1
     assert model.connection.client_send_message.call_count == 1
@@ -46,6 +49,7 @@ def test_receive_no_message_send_client2():
     # Seed 14 causes the action to be 2 (send to client 2)
     model.run(test=True, seed=14)
 
+    # Checks that a message was sent to client 2 with the correct logical clock time
     assert model.clock == 1
     assert model.connection.client_receive_message.call_count == 1
     assert model.connection.client_send_message.call_count == 1
@@ -63,6 +67,7 @@ def test_receive_no_message_send_both_clients():
     # Seed 1 causes the action to be 3 (send to client 1 & 2)
     model.run(test=True, seed=1)
 
+    # Checks that a message was sent to both clients with the correct logical clock time
     assert model.clock == 1
     assert model.connection.client_receive_message.call_count == 1
     assert model.connection.client_send_message.call_count == 2
@@ -95,6 +100,7 @@ def test_receives_message():
 
     model.run(test=True)
 
+    # Checks that the logical clock time is updated correctly when a message is received
     assert model.clock == 7
     assert model.connection.client_receive_message.call_count == 1
     assert model.connection.client_send_message.call_count == 0

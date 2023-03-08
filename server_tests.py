@@ -10,6 +10,8 @@ import model_pb2 as chat
 def test_initialization():
     """Test that the server is initialized correctly."""
     server = ChatServicer()
+
+    # Checks that all message queues are empty initially
     assert len(server.message_queue_0) == 0
     assert len(server.message_queue_1) == 0
     assert len(server.message_queue_2) == 0
@@ -45,18 +47,21 @@ def test_client_send_message():
 
     server = ChatServicer()
 
+    # Checks that the server sends the message to recipient 0
     request.recipient = 0
     server.client_send_message(request, context)
     assert len(server.message_queue_0) == 1
     assert len(server.message_queue_1) == 0
     assert len(server.message_queue_2) == 0
 
+    # Checks that the server sends the message to recipient 1
     request.recipient = 1
     server.client_send_message(request, context)
     assert len(server.message_queue_0) == 1
     assert len(server.message_queue_1) == 1
     assert len(server.message_queue_2) == 0
 
+    # Checks that the server sends the message to recipient 2
     request.recipient = 2
     server.client_send_message(request, context)
     assert len(server.message_queue_0) == 1

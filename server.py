@@ -65,6 +65,7 @@ class ChatServicer(model_pb2_grpc.ChatServicer):
     '''Handles the processes sending messages to other processes'''
     def client_send_message(self, request, context):
         recipient = request.recipient
+        # Sends message to appropriate recipient by attaching to the necessary queue
         if recipient == 0:
             mutex_queue0.acquire()
             self.message_queue_0.append(request)
