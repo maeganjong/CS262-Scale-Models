@@ -1,0 +1,5 @@
+INFO:root:Clockspeed: 2
+INFO:root:Sent message to 2 at 1 logical time & at 13:06:35.370388
+INFO:root:Internal event at 2 logical time & at 13:07:05.380914
+INFO:root:Sent message to 2 at 3 logical time & at 13:07:35.390515
+INFO:root:Receive messsage from 1 at 7 logical time & at 13:08:05.402750. Message queue length: 0
